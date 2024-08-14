@@ -1,0 +1,102 @@
+$pad: 0.5rem;
+$text: rgb(68, 67, 67);
+body {
+  margin: 0;
+  padding: 0;
+  color: $text;
+}
+button {
+  font-weight: 600;
+  color: $text;
+  border: 1px solid $text;
+  cursor: pointer;
+  &:hover {
+    color: white;
+    background: $text;
+  }
+}
+.resizer {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 5px;
+	height: 100%;
+	cursor: col-resize;
+	user-select: none;
+}
+.container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  position: relative;
+}
+form,
+table {
+  max-width: 1200px;
+}
+form {
+  display: flex;
+  width: 100%;
+  margin: 1rem 0;
+  input {
+    width: 100%;
+    padding: $pad;
+    border: 1px solid $text;
+  }
+  button {
+    width: 100px;
+  }
+}
+table {
+  border-collapse: collapse;
+  tr:hover {
+    background-color: #f7f7f7;
+  }
+  th {
+    background: #dfdfdf;
+  }
+  th,
+  td {
+    position: relative;
+    text-align: start;
+    padding: $pad;
+    border: 1px solid #ececec;
+  }
+}
+.modal-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(169, 169, 169, 0.5);
+  .modal {
+    position: fixed;
+    top: 15rem;
+    background-color: white;
+    padding: 1.5rem;
+    h3 {
+      text-align: center;
+    }
+    ul {
+      list-style: none;
+      width: 100%;
+      padding-left: 0;
+      flex-wrap: wrap;
+      li {
+        display: flex;
+        flex-flow: column;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #ececec;
+        &:last-of-type {
+          border: none;
+        }
+      }
+    }
+    button {
+      width: 100%;
+      padding: 0.5rem 0;
+      margin-top: 1.5rem;
+    }
+  }
+}
